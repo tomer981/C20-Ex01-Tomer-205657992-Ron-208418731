@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C20 Ex01 TomerAbutbul 205657992 RonrJourno 208418731", "C20 Ex01 TomerAbutbul 205657992 RonrJourno 208418731\C20 Ex01 TomerAbutbul 205657992 RonrJourno 208418731.csproj", "{9770188F-8B62-463A-B242-E2D98562AF34}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C20 Ex01 TomerAbutbul 205657992 RonJourno 208418731", "C20 Ex01 TomerAbutbul 205657992 RonrJourno 208418731\C20 Ex01 TomerAbutbul 205657992 RonJourno 208418731.csproj", "{9770188F-8B62-463A-B242-E2D98562AF34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

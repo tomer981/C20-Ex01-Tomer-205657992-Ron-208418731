@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace C20_Ex01_TomerAbutbul_205657992_RonrJourno_208418731.Properties
+namespace C20_Ex01_TomerAbutbul_205657992_RonJourno_208418731.Properties
 {
 
 
