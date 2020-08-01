@@ -15,7 +15,8 @@ namespace C20_Ex01_TomerAbutbul_205657992_RonrJourno_208418731
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());121
+            Application.Run(new Form1());שדג
+            int x = 5;
         }
     }
 }
