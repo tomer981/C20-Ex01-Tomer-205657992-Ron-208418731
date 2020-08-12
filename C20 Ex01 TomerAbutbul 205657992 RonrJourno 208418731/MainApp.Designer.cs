@@ -95,6 +95,9 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.GeneralInfo);
             this.tabControl1.Controls.Add(this.task1);
             this.tabControl1.Controls.Add(this.task2);
@@ -405,7 +408,7 @@
             this.task1.Text = "Advance FIlter";
             this.task1.UseVisualStyleBackColor = true;
             // 
-            // checkBoxEnableDate
+            // task2
             // 
             this.checkBoxEnableDate.AutoSize = true;
             this.checkBoxEnableDate.Location = new System.Drawing.Point(55, 194);
@@ -578,7 +581,7 @@
             this.label9.TabIndex = 8;
             this.label9.Text = "Born:";
             // 
-            // label8
+            // menuStrip1
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(4, 15);
@@ -604,18 +607,25 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // task2
+            // fileSystemWatcher1
             // 
-            this.task2.Location = new System.Drawing.Point(4, 22);
-            this.task2.Name = "task2";
-            this.task2.Padding = new System.Windows.Forms.Padding(3);
-            this.task2.Size = new System.Drawing.Size(624, 600);
-            this.task2.TabIndex = 2;
-            this.task2.Text = "task 2";
-            this.task2.UseVisualStyleBackColor = true;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 115);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(41, 13);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "label11";
             // 
             // fileSystemWatcher1
             // 
+            this.linkLabelFetchCheckins.AutoSize = true;
+            this.linkLabelFetchCheckins.Location = new System.Drawing.Point(19, 225);
+            this.linkLabelFetchCheckins.Name = "linkLabelFetchCheckins";
+            this.linkLabelFetchCheckins.Size = new System.Drawing.Size(151, 13);
+            this.linkLabelFetchCheckins.TabIndex = 1;
+            this.linkLabelFetchCheckins.TabStop = true;
+            this.linkLabelFetchCheckins.Text = "linkLabel Fetch User Checkins";
+            this.linkLabelFetchCheckins.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelFetchCheckins_LinkClicked);
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
             // 
@@ -698,6 +708,8 @@
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.CheckBox checkBoxEnableDate;
         private System.Windows.Forms.DateTimePicker dateTimePickerFrom;
+        private System.Windows.Forms.DataGridView dataGridViewCheckins;
+        private System.Windows.Forms.LinkLabel linkLabelFetchCheckins;
     }
 }
 

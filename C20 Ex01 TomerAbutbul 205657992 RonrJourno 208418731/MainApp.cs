@@ -11,6 +11,7 @@ namespace C20_Ex01_TomerAbutbul_205657992_RonJourno_208418731
     public partial class MainApp : Form
     {
         private User m_LoggedInUser = null;
+        private List<CheckinDetails> m_checkinDetails = null;
 
         public MainApp()
         {
@@ -32,6 +33,7 @@ namespace C20_Ex01_TomerAbutbul_205657992_RonJourno_208418731
                 {
                     buttonLoginLogout.Text = "Logout";
                 }
+
                 //else error box
             }
         }
@@ -60,7 +62,7 @@ namespace C20_Ex01_TomerAbutbul_205657992_RonJourno_208418731
         {
             fetchCheckins();
         }
-        
+
         private void linkLabelUserEvents_LinkClicked(object i_Sender, LinkLabelLinkClickedEventArgs i_E)
         {
             fetchEvents();
@@ -68,7 +70,7 @@ namespace C20_Ex01_TomerAbutbul_205657992_RonJourno_208418731
 
         private void listBoxEvents_SelectedIndexChanged(object i_Sender, EventArgs i_E)
         {
-            if (listBoxEvents.SelectedItems.Count == 1)
+            if(listBoxEvents.SelectedItems.Count == 1)
             {
                 Event selectedEvent = listBoxEvents.SelectedItem as Event;
                 pictureBoxEvents.LoadAsync(selectedEvent.PictureNormalURL);
@@ -150,13 +152,13 @@ namespace C20_Ex01_TomerAbutbul_205657992_RonJourno_208418731
         {
             listBoxFriends.Items.Clear();
             listBoxFriends.DisplayMember = "Name";
-            foreach (User friend in m_LoggedInUser.Friends)
+            foreach(User friend in m_LoggedInUser.Friends)
             {
                 listBoxFriends.Items.Add(friend);
                 friend.ReFetch(DynamicWrapper.eLoadOptions.Full);//exception
             }
 
-            if (m_LoggedInUser.Friends.Count == 0)
+            if(m_LoggedInUser.Friends.Count == 0)
             {
                 MessageBox.Show("No Friends to retrieve :(");
             }
@@ -164,10 +166,10 @@ namespace C20_Ex01_TomerAbutbul_205657992_RonJourno_208418731
 
         private void displaySelectedFriend()
         {
-            if (listBoxFriends.SelectedItems.Count == 1)
+            if(listBoxFriends.SelectedItems.Count == 1)
             {
                 User selectedFriend = listBoxFriends.SelectedItem as User;
-                if (selectedFriend.PictureNormalURL != null)
+                if(selectedFriend.PictureNormalURL != null)
                 {
                     pictureBoxDisplayFriend.LoadAsync(selectedFriend.PictureNormalURL);
                 }
@@ -180,18 +182,18 @@ namespace C20_Ex01_TomerAbutbul_205657992_RonJourno_208418731
 
         private void fetchPosts()
         {
-            foreach (Post post in m_LoggedInUser.Posts)
+            foreach(Post post in m_LoggedInUser.Posts)
             {
-                if (post.Message != null && !listBoxDisplayPosts.Items.Contains(post.Message))
+                if(post.Message != null && !listBoxDisplayPosts.Items.Contains(post.Message))
                 {
                     listBoxDisplayPosts.Items.Add(post.Message);
                 }
 
-                else if (post.Caption != null && !listBoxDisplayPosts.Items.Contains(post.Caption))
+                else if(post.Caption != null && !listBoxDisplayPosts.Items.Contains(post.Caption))
                 {
                     listBoxDisplayPosts.Items.Add(post.Caption);
                 }
-                
+
                 else
                 {
                     if(!listBoxDisplayPosts.Items.Contains(string.Format("[{0}]", post.Type)))
@@ -201,7 +203,7 @@ namespace C20_Ex01_TomerAbutbul_205657992_RonJourno_208418731
                 }
             }
 
-            if (m_LoggedInUser.Posts.Count == 0)
+            if(m_LoggedInUser.Posts.Count == 0)
             {
                 MessageBox.Show("No Posts to retrieve :(");
             }
@@ -216,15 +218,15 @@ namespace C20_Ex01_TomerAbutbul_205657992_RonJourno_208418731
 
         private void fetchCheckins()
         {
-            foreach (Checkin checkin in m_LoggedInUser.Checkins)
+            foreach(Checkin checkin in m_LoggedInUser.Checkins)
             {
-                if (!listBoxCheckins.Items.Contains(checkin.Place.Name))
+                if(!listBoxCheckins.Items.Contains(checkin.Place.Name))
                 {
                     listBoxCheckins.Items.Add(checkin.Place.Name);
                 }
             }
 
-            if (m_LoggedInUser.Checkins.Count == 0)
+            if(m_LoggedInUser.Checkins.Count == 0)
             {
                 MessageBox.Show("No Checkins to retrieve :(");
             }
@@ -234,7 +236,7 @@ namespace C20_Ex01_TomerAbutbul_205657992_RonJourno_208418731
         {
             listBoxEvents.Items.Clear();
             listBoxEvents.DisplayMember = "Name";
-            foreach (Event fbEvent in m_LoggedInUser.Events)
+            foreach(Event fbEvent in m_LoggedInUser.Events)
             {
                 if(!listBoxEvents.Items.Contains(fbEvent))
                 {
@@ -242,7 +244,7 @@ namespace C20_Ex01_TomerAbutbul_205657992_RonJourno_208418731
                 }
             }
 
-            if (m_LoggedInUser.Events.Count == 0)
+            if(m_LoggedInUser.Events.Count == 0)
             {
                 MessageBox.Show("No Events to retrieve :(");
             }
@@ -253,7 +255,7 @@ namespace C20_Ex01_TomerAbutbul_205657992_RonJourno_208418731
             listBoxPages.Items.Clear();
             listBoxPages.DisplayMember = "Name";
 
-            foreach (Page page in m_LoggedInUser.LikedPages)
+            foreach(Page page in m_LoggedInUser.LikedPages)
             {
                 if(!listBoxPages.Items.Contains(page))
                 {
@@ -261,7 +263,7 @@ namespace C20_Ex01_TomerAbutbul_205657992_RonJourno_208418731
                 }
             }
 
-            if (m_LoggedInUser.LikedPages.Count == 0)
+            if(m_LoggedInUser.LikedPages.Count == 0)
             {
                 {
                     MessageBox.Show("No liked pages to retrieve :(");
@@ -343,6 +345,26 @@ namespace C20_Ex01_TomerAbutbul_205657992_RonJourno_208418731
             {
                 numericUpDownMinNumberFriends.Value = numericUpDownMaxNumberOfFriends.Value;
             }
+        }
+
+        private void linkLabelFetchCheckins_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if(m_LoggedInUser.Checkins.Count != 0)
+            {
+
+                dataGridViewCheckins.DataSource = m_LoggedInUser.Checkins;
+                dataGridViewCheckins.Columns["PictureURL"].Visible = false;
+                dataGridViewCheckins.Columns["Link"].Visible = false;
+                dataGridViewCheckins.Columns["Caption"].Visible = false;
+                dataGridViewCheckins.Columns["Description"].Visible = false;
+                dataGridViewCheckins.Columns["Name"].Visible = false;
+                dataGridViewCheckins.Columns["Source"].Visible = false;
+                dataGridViewCheckins.Columns["IconURL"].Visible = false;
+                dataGridViewCheckins.Columns["ObjectID"].Visible = false;
+                //m_LoggedInUser.Checkins[0].TaggedUsers
+
+            }
+
         }
     }
 
