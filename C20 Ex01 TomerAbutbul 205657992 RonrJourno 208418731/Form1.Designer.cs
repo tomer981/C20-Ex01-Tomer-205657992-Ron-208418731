@@ -56,19 +56,21 @@
             this.FetchFriends = new System.Windows.Forms.LinkLabel();
             this.buttonLoginLogout = new System.Windows.Forms.Button();
             this.task1 = new System.Windows.Forms.TabPage();
-            this.task2 = new System.Windows.Forms.TabPage();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.labelGender = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.labelAge = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.labelAge = new System.Windows.Forms.Label();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.labelGender = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.task2 = new System.Windows.Forms.TabPage();
+            this.dataGridViewCheckins = new System.Windows.Forms.DataGridView();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.linkLabelFetchCheckins = new System.Windows.Forms.LinkLabel();
             this.tabControl1.SuspendLayout();
             this.GeneralInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPage)).BeginInit();
@@ -77,11 +79,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfilePicture)).BeginInit();
             this.task1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.task2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCheckins)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.GeneralInfo);
             this.tabControl1.Controls.Add(this.task1);
             this.tabControl1.Controls.Add(this.task2);
@@ -380,43 +387,66 @@
             this.task1.Text = "Advance FIlter";
             this.task1.UseVisualStyleBackColor = true;
             // 
-            // task2
+            // label12
             // 
-            this.task2.Location = new System.Drawing.Point(4, 22);
-            this.task2.Name = "task2";
-            this.task2.Padding = new System.Windows.Forms.Padding(3);
-            this.task2.Size = new System.Drawing.Size(624, 600);
-            this.task2.TabIndex = 2;
-            this.task2.Text = "task 2";
-            this.task2.UseVisualStyleBackColor = true;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(105, 314);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(41, 13);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "label12";
             // 
-            // menuStrip1
+            // label11
             // 
-            this.menuStrip1.Location = new System.Drawing.Point(3, 3);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(618, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 115);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(41, 13);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "label11";
             // 
-            // labelGender
+            // label10
             // 
-            this.labelGender.AutoSize = true;
-            this.labelGender.Location = new System.Drawing.Point(6, 206);
-            this.labelGender.Name = "labelGender";
-            this.labelGender.Size = new System.Drawing.Size(45, 13);
-            this.labelGender.TabIndex = 1;
-            this.labelGender.Text = "Gender:";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 41);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 13);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "label10";
             // 
-            // radioButton1
+            // label9
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(54, 206);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(48, 17);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Male";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 74);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "label9";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 14);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "label8";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(54, 178);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(113, 20);
+            this.numericUpDown1.TabIndex = 5;
+            // 
+            // labelAge
+            // 
+            this.labelAge.AutoSize = true;
+            this.labelAge.Location = new System.Drawing.Point(6, 180);
+            this.labelAge.Name = "labelAge";
+            this.labelAge.Size = new System.Drawing.Size(29, 13);
+            this.labelAge.TabIndex = 4;
+            this.labelAge.Text = "Age:";
             // 
             // radioButton2
             // 
@@ -429,71 +459,72 @@
             this.radioButton2.Text = "Female";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // labelAge
+            // radioButton1
             // 
-            this.labelAge.AutoSize = true;
-            this.labelAge.Location = new System.Drawing.Point(6, 180);
-            this.labelAge.Name = "labelAge";
-            this.labelAge.Size = new System.Drawing.Size(29, 13);
-            this.labelAge.TabIndex = 4;
-            this.labelAge.Text = "Age:";
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(54, 206);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(48, 17);
+            this.radioButton1.TabIndex = 2;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Male";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown1
+            // labelGender
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(54, 178);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(113, 20);
-            this.numericUpDown1.TabIndex = 5;
+            this.labelGender.AutoSize = true;
+            this.labelGender.Location = new System.Drawing.Point(6, 206);
+            this.labelGender.Name = "labelGender";
+            this.labelGender.Size = new System.Drawing.Size(45, 13);
+            this.labelGender.TabIndex = 1;
+            this.labelGender.Text = "Gender:";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Location = new System.Drawing.Point(3, 3);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(618, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // task2
+            // 
+            this.task2.Controls.Add(this.linkLabelFetchCheckins);
+            this.task2.Controls.Add(this.dataGridViewCheckins);
+            this.task2.Location = new System.Drawing.Point(4, 22);
+            this.task2.Name = "task2";
+            this.task2.Padding = new System.Windows.Forms.Padding(3);
+            this.task2.Size = new System.Drawing.Size(624, 600);
+            this.task2.TabIndex = 2;
+            this.task2.Text = "task 2";
+            this.task2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewCheckins
+            // 
+            this.dataGridViewCheckins.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewCheckins.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCheckins.Location = new System.Drawing.Point(3, 244);
+            this.dataGridViewCheckins.Name = "dataGridViewCheckins";
+            this.dataGridViewCheckins.Size = new System.Drawing.Size(618, 353);
+            this.dataGridViewCheckins.TabIndex = 0;
             // 
             // fileSystemWatcher1
             // 
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
             // 
-            // label8
+            // linkLabelFetchCheckins
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 14);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "label8";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 74);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "label9";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 41);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 13);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "label10";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 115);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 13);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "label11";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(105, 314);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(41, 13);
-            this.label12.TabIndex = 14;
-            this.label12.Text = "label12";
+            this.linkLabelFetchCheckins.AutoSize = true;
+            this.linkLabelFetchCheckins.Location = new System.Drawing.Point(19, 225);
+            this.linkLabelFetchCheckins.Name = "linkLabelFetchCheckins";
+            this.linkLabelFetchCheckins.Size = new System.Drawing.Size(151, 13);
+            this.linkLabelFetchCheckins.TabIndex = 1;
+            this.linkLabelFetchCheckins.TabStop = true;
+            this.linkLabelFetchCheckins.Text = "linkLabel Fetch User Checkins";
+            this.linkLabelFetchCheckins.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelFetchCheckins_LinkClicked);
             // 
             // Form1
             // 
@@ -514,6 +545,9 @@
             this.task1.ResumeLayout(false);
             this.task1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.task2.ResumeLayout(false);
+            this.task2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCheckins)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
 
@@ -561,6 +595,8 @@
         private System.Windows.Forms.Label labelGender;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
+        private System.Windows.Forms.DataGridView dataGridViewCheckins;
+        private System.Windows.Forms.LinkLabel linkLabelFetchCheckins;
     }
 }
 
