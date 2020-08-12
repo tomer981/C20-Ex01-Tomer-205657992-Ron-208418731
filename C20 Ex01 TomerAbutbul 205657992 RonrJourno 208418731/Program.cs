@@ -15,11 +15,9 @@ namespace C20_Ex01_TomerAbutbul_205657992_RonJourno_208418731
         [STAThread]
         static void Main()
         {
-            Clipboard.SetText("designpatterns-Ex01");
-            FacebookService.s_UseForamttedToStrings = true;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MainApp());
         }
     }
 }

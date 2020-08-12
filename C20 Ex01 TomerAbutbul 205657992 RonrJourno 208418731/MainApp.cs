@@ -1,32 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+using System.Drawing.Design;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
 
 namespace C20_Ex01_TomerAbutbul_205657992_RonJourno_208418731
 {
-    public partial class Form1 : Form
+    public partial class MainApp : Form
     {
         private User m_LoggedInUser = null;
 
-        public Form1()
+        public MainApp()
         {
             InitializeComponent();
         }
-
 
         private void buttonLoginLogout_Click(object i_Sender, EventArgs i_E)
         {
             if(m_LoggedInUser != null)
             {
-                m_LoggedInUser = null;
-                buttonLoginLogout.Text = "Login";
+                logoutAndInit();
+
             }
 
             else
@@ -84,6 +80,12 @@ namespace C20_Ex01_TomerAbutbul_205657992_RonJourno_208418731
             fetchPages();
         }
 
+        private void buttonSetStatus_Click(object i_Sender, EventArgs i_E)
+        {
+            Status postedStatus = m_LoggedInUser.PostStatus(textBoxStatus.Text);
+            MessageBox.Show("Status Posted! ID: " + postedStatus.Id);
+        }
+
         private void loginAndInit()
         {
             LoginResult result = FacebookService.Login(
@@ -118,6 +120,23 @@ namespace C20_Ex01_TomerAbutbul_205657992_RonJourno_208418731
             }
         }
 
+        private void logoutAndInit()
+        {
+            m_LoggedInUser = null;
+            buttonLoginLogout.Text = "Login";
+            pictureBoxProfilePicture = null;
+            listBoxFriends.Items.Clear();
+            pictureBoxDisplayFriend = null;
+            listBoxDisplayPosts.Items.Clear();
+            listBoxPostComments.Items.Clear();
+            listBoxEvents.Items.Clear();
+            pictureBoxEvents = null;
+            listBoxPages.Items.Clear();
+            pictureBoxPage = null;
+            listBoxCheckins.Items.Clear();
+            textBoxStatus.Text = "";
+        }
+
         private void fetchUserInfo()
         {
             pictureBoxProfilePicture.LoadAsync(m_LoggedInUser.PictureNormalURL);
@@ -134,7 +153,7 @@ namespace C20_Ex01_TomerAbutbul_205657992_RonJourno_208418731
             foreach (User friend in m_LoggedInUser.Friends)
             {
                 listBoxFriends.Items.Add(friend);
-                friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
+                friend.ReFetch(DynamicWrapper.eLoadOptions.Full);//exception
             }
 
             if (m_LoggedInUser.Friends.Count == 0)
@@ -203,7 +222,6 @@ namespace C20_Ex01_TomerAbutbul_205657992_RonJourno_208418731
                 {
                     listBoxCheckins.Items.Add(checkin.Place.Name);
                 }
-
             }
 
             if (m_LoggedInUser.Checkins.Count == 0)
@@ -248,6 +266,82 @@ namespace C20_Ex01_TomerAbutbul_205657992_RonJourno_208418731
                 {
                     MessageBox.Show("No liked pages to retrieve :(");
                 }
+            }
+        }
+        
+        private void buttonSearch_Click(object i_Sender, EventArgs i_E)
+        {
+            string nameOfAFriendThatHaveMeOnHisFriendsList = textBoxFriendOfAFriendName.Text == "" ? null : textBoxFriendOfAFriendName.Text;
+
+            DateTime bornFromDateTime = dateTimePickerFrom.Value;
+            DateTime bornFromDateTo = dateTimePickerTo.Value;
+
+            if(numericUpDownMinNumberFriends != null)
+            {
+                int minNumberOfFriends = int.Parse(numericUpDownMinNumberFriends.Text);
+            }
+
+            if(numericUpDownMaxNumberOfFriends != null)
+            {
+                int maxNumberOfFriends = int.Parse(numericUpDownMaxNumberOfFriends.Text);
+            }
+
+
+
+            List<User> friendCollection = FilterByFirstName(m_LoggedInUser.Friends.ToList());
+           
+            friendCollection = friendCollection.Where(friend => friend.FriendLists.Count > )
+            
+            
+            
+            foreach(User friend in friendCollection)
+            {
+                listBoxMatchPeoples.Items.Add(friend);
+            }
+        }
+
+        private List<User> filterByFirstName(List<User> i_FriendsList)
+        {
+            string firstName = textBoxFirstName.Text == "" ? null : textBoxFirstName.Text;
+            return i_FriendsList.Where(friend => friend.FirstName.Equals(null) || friend.FirstName.Equals(firstName)).ToList();
+        }
+
+        private List<User> filterByLastName(List<User> i_FriendsList)
+        {
+            string lastName = textBoxLastName.Text == "" ? null : textBoxLastName.Text;
+            return i_FriendsList.Where(friend => friend.LastName.Equals(null) || friend.LastName.Equals(lastName)).ToList();
+        }
+
+        
+        private void checkBoxEnableDate_CheckedChanged(object i_Sender, EventArgs i_E)
+        {
+            if (checkBoxEnableDate.Checked)
+            {
+                dateTimePickerFrom.Visible = true;
+                dateTimePickerTo.Visible = true;
+                labelTextTo.Visible = true;
+            }
+            else
+            {
+                dateTimePickerFrom.Visible = false;
+                dateTimePickerTo.Visible = false;
+                labelTextTo.Visible = false;
+            }
+        }
+
+        private void numericUpDownMinNumberFriends_ValueChanged(object i_Sender, EventArgs i_E)
+        {
+            if(numericUpDownMinNumberFriends.Value > numericUpDownMaxNumberOfFriends.Value)
+            {
+                numericUpDownMaxNumberOfFriends.Value = numericUpDownMinNumberFriends.Value;
+            }
+        }
+
+        private void numericUpDownMaxNumberOfFriends_ValueChanged(object i_Sender, EventArgs i_E)
+        {
+            if (numericUpDownMinNumberFriends.Value > numericUpDownMaxNumberOfFriends.Value)
+            {
+                numericUpDownMinNumberFriends.Value = numericUpDownMaxNumberOfFriends.Value;
             }
         }
     }

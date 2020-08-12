@@ -1,6 +1,6 @@
 ﻿namespace C20_Ex01_TomerAbutbul_205657992_RonJourno_208418731
 {
-    partial class Form1
+    partial class MainApp
     {
         /// <summary>
         /// Required designer variable.
@@ -56,19 +56,30 @@
             this.FetchFriends = new System.Windows.Forms.LinkLabel();
             this.buttonLoginLogout = new System.Windows.Forms.Button();
             this.task1 = new System.Windows.Forms.TabPage();
-            this.task2 = new System.Windows.Forms.TabPage();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.labelGender = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.labelAge = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.checkBoxEnableDate = new System.Windows.Forms.CheckBox();
+            this.pictureBoxOfPeople = new System.Windows.Forms.PictureBox();
+            this.listBoxMatchPeoples = new System.Windows.Forms.ListBox();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.checkBoxFemale = new System.Windows.Forms.CheckBox();
+            this.checkBoxMale = new System.Windows.Forms.CheckBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.numericUpDownMaxNumberOfFriends = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownMinNumberFriends = new System.Windows.Forms.NumericUpDown();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBoxFriendOfAFriendName = new System.Windows.Forms.TextBox();
+            this.textBoxFirstName = new System.Windows.Forms.TextBox();
+            this.textBoxLastName = new System.Windows.Forms.TextBox();
+            this.dateTimePickerTo = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerFrom = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
+            this.labelTextTo = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.labelGender = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.task2 = new System.Windows.Forms.TabPage();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.tabControl1.SuspendLayout();
             this.GeneralInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPage)).BeginInit();
@@ -76,7 +87,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDisplayFriend)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfilePicture)).BeginInit();
             this.task1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOfPeople)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxNumberOfFriends)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinNumberFriends)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -219,6 +232,7 @@
             this.buttonSetStatus.TabIndex = 48;
             this.buttonSetStatus.Text = "Post";
             this.buttonSetStatus.UseVisualStyleBackColor = true;
+            this.buttonSetStatus.Click += new System.EventHandler(this.buttonSetStatus_Click);
             // 
             // label3
             // 
@@ -361,15 +375,26 @@
             // 
             // task1
             // 
+            this.task1.Controls.Add(this.checkBoxEnableDate);
+            this.task1.Controls.Add(this.pictureBoxOfPeople);
+            this.task1.Controls.Add(this.listBoxMatchPeoples);
+            this.task1.Controls.Add(this.buttonSearch);
+            this.task1.Controls.Add(this.checkBoxFemale);
+            this.task1.Controls.Add(this.checkBoxMale);
+            this.task1.Controls.Add(this.label16);
+            this.task1.Controls.Add(this.numericUpDownMaxNumberOfFriends);
+            this.task1.Controls.Add(this.numericUpDownMinNumberFriends);
+            this.task1.Controls.Add(this.label15);
+            this.task1.Controls.Add(this.textBoxFriendOfAFriendName);
+            this.task1.Controls.Add(this.textBoxFirstName);
+            this.task1.Controls.Add(this.textBoxLastName);
+            this.task1.Controls.Add(this.dateTimePickerTo);
+            this.task1.Controls.Add(this.dateTimePickerFrom);
             this.task1.Controls.Add(this.label12);
-            this.task1.Controls.Add(this.label11);
+            this.task1.Controls.Add(this.labelTextTo);
             this.task1.Controls.Add(this.label10);
             this.task1.Controls.Add(this.label9);
             this.task1.Controls.Add(this.label8);
-            this.task1.Controls.Add(this.numericUpDown1);
-            this.task1.Controls.Add(this.labelAge);
-            this.task1.Controls.Add(this.radioButton2);
-            this.task1.Controls.Add(this.radioButton1);
             this.task1.Controls.Add(this.labelGender);
             this.task1.Controls.Add(this.menuStrip1);
             this.task1.Location = new System.Drawing.Point(4, 22);
@@ -379,6 +404,205 @@
             this.task1.TabIndex = 1;
             this.task1.Text = "Advance FIlter";
             this.task1.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxEnableDate
+            // 
+            this.checkBoxEnableDate.AutoSize = true;
+            this.checkBoxEnableDate.Location = new System.Drawing.Point(55, 194);
+            this.checkBoxEnableDate.Name = "checkBoxEnableDate";
+            this.checkBoxEnableDate.Size = new System.Drawing.Size(59, 17);
+            this.checkBoxEnableDate.TabIndex = 37;
+            this.checkBoxEnableDate.Text = "Enable";
+            this.checkBoxEnableDate.UseVisualStyleBackColor = true;
+            this.checkBoxEnableDate.CheckedChanged += new System.EventHandler(this.checkBoxEnableDate_CheckedChanged);
+            // 
+            // pictureBoxOfPeople
+            // 
+            this.pictureBoxOfPeople.Location = new System.Drawing.Point(225, 304);
+            this.pictureBoxOfPeople.Name = "pictureBoxOfPeople";
+            this.pictureBoxOfPeople.Size = new System.Drawing.Size(126, 104);
+            this.pictureBoxOfPeople.TabIndex = 36;
+            this.pictureBoxOfPeople.TabStop = false;
+            // 
+            // listBoxMatchPeoples
+            // 
+            this.listBoxMatchPeoples.FormattingEnabled = true;
+            this.listBoxMatchPeoples.Location = new System.Drawing.Point(7, 304);
+            this.listBoxMatchPeoples.Name = "listBoxMatchPeoples";
+            this.listBoxMatchPeoples.Size = new System.Drawing.Size(191, 290);
+            this.listBoxMatchPeoples.TabIndex = 35;
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Location = new System.Drawing.Point(7, 217);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(105, 26);
+            this.buttonSearch.TabIndex = 34;
+            this.buttonSearch.Text = "Search";
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // checkBoxFemale
+            // 
+            this.checkBoxFemale.AutoSize = true;
+            this.checkBoxFemale.Location = new System.Drawing.Point(190, 167);
+            this.checkBoxFemale.Name = "checkBoxFemale";
+            this.checkBoxFemale.Size = new System.Drawing.Size(60, 17);
+            this.checkBoxFemale.TabIndex = 33;
+            this.checkBoxFemale.Text = "Female";
+            this.checkBoxFemale.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxMale
+            // 
+            this.checkBoxMale.AutoSize = true;
+            this.checkBoxMale.Location = new System.Drawing.Point(135, 167);
+            this.checkBoxMale.Name = "checkBoxMale";
+            this.checkBoxMale.Size = new System.Drawing.Size(49, 17);
+            this.checkBoxMale.TabIndex = 32;
+            this.checkBoxMale.Text = "Male";
+            this.checkBoxMale.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(345, 144);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(20, 13);
+            this.label16.TabIndex = 31;
+            this.label16.Text = "To";
+            // 
+            // numericUpDownMaxNumberOfFriends
+            // 
+            this.numericUpDownMaxNumberOfFriends.Location = new System.Drawing.Point(371, 137);
+            this.numericUpDownMaxNumberOfFriends.Name = "numericUpDownMaxNumberOfFriends";
+            this.numericUpDownMaxNumberOfFriends.Size = new System.Drawing.Size(206, 20);
+            this.numericUpDownMaxNumberOfFriends.TabIndex = 30;
+            this.numericUpDownMaxNumberOfFriends.ValueChanged += new System.EventHandler(this.numericUpDownMaxNumberOfFriends_ValueChanged);
+            // 
+            // numericUpDownMinNumberFriends
+            // 
+            this.numericUpDownMinNumberFriends.Location = new System.Drawing.Point(133, 137);
+            this.numericUpDownMinNumberFriends.Maximum = new decimal(new int[] {
+            120,
+            0,
+            0,
+            0});
+            this.numericUpDownMinNumberFriends.Name = "numericUpDownMinNumberFriends";
+            this.numericUpDownMinNumberFriends.Size = new System.Drawing.Size(206, 20);
+            this.numericUpDownMinNumberFriends.TabIndex = 26;
+            this.numericUpDownMinNumberFriends.ValueChanged += new System.EventHandler(this.numericUpDownMinNumberFriends_ValueChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(4, 141);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(110, 13);
+            this.label15.TabIndex = 25;
+            this.label15.Text = "Min Number Of Friend";
+            // 
+            // textBoxFriendOfAFriendName
+            // 
+            this.textBoxFriendOfAFriendName.Location = new System.Drawing.Point(133, 72);
+            this.textBoxFriendOfAFriendName.Name = "textBoxFriendOfAFriendName";
+            this.textBoxFriendOfAFriendName.Size = new System.Drawing.Size(206, 20);
+            this.textBoxFriendOfAFriendName.TabIndex = 19;
+            // 
+            // textBoxFirstName
+            // 
+            this.textBoxFirstName.Location = new System.Drawing.Point(133, 12);
+            this.textBoxFirstName.Name = "textBoxFirstName";
+            this.textBoxFirstName.Size = new System.Drawing.Size(206, 20);
+            this.textBoxFirstName.TabIndex = 18;
+            // 
+            // textBoxLastName
+            // 
+            this.textBoxLastName.Location = new System.Drawing.Point(133, 42);
+            this.textBoxLastName.Name = "textBoxLastName";
+            this.textBoxLastName.Size = new System.Drawing.Size(206, 20);
+            this.textBoxLastName.TabIndex = 17;
+            // 
+            // dateTimePickerTo
+            // 
+            this.dateTimePickerTo.Location = new System.Drawing.Point(373, 192);
+            this.dateTimePickerTo.Name = "dateTimePickerTo";
+            this.dateTimePickerTo.Size = new System.Drawing.Size(194, 20);
+            this.dateTimePickerTo.TabIndex = 16;
+            this.dateTimePickerTo.Value = new System.DateTime(2020, 8, 12, 21, 0, 19, 0);
+            this.dateTimePickerTo.Visible = false;
+            // 
+            // dateTimePickerFrom
+            // 
+            this.dateTimePickerFrom.Location = new System.Drawing.Point(135, 192);
+            this.dateTimePickerFrom.Name = "dateTimePickerFrom";
+            this.dateTimePickerFrom.Size = new System.Drawing.Size(206, 20);
+            this.dateTimePickerFrom.TabIndex = 15;
+            this.dateTimePickerFrom.TabStop = false;
+            this.dateTimePickerFrom.Value = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dateTimePickerFrom.Visible = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(4, 75);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(123, 13);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "Search Friend By Friend:";
+            // 
+            // labelTextTo
+            // 
+            this.labelTextTo.AutoSize = true;
+            this.labelTextTo.Location = new System.Drawing.Point(347, 195);
+            this.labelTextTo.Name = "labelTextTo";
+            this.labelTextTo.Size = new System.Drawing.Size(20, 13);
+            this.labelTextTo.TabIndex = 12;
+            this.labelTextTo.Text = "To";
+            this.labelTextTo.Visible = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(4, 45);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(61, 13);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Last Name:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 195);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(32, 13);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Born:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(4, 15);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(60, 13);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "First Name:";
+            // 
+            // labelGender
+            // 
+            this.labelGender.AutoSize = true;
+            this.labelGender.Location = new System.Drawing.Point(6, 168);
+            this.labelGender.Name = "labelGender";
+            this.labelGender.Size = new System.Drawing.Size(45, 13);
+            this.labelGender.TabIndex = 1;
+            this.labelGender.Text = "Gender:";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Location = new System.Drawing.Point(3, 3);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(618, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // task2
             // 
@@ -390,110 +614,10 @@
             this.task2.Text = "task 2";
             this.task2.UseVisualStyleBackColor = true;
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Location = new System.Drawing.Point(3, 3);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(618, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // labelGender
-            // 
-            this.labelGender.AutoSize = true;
-            this.labelGender.Location = new System.Drawing.Point(6, 206);
-            this.labelGender.Name = "labelGender";
-            this.labelGender.Size = new System.Drawing.Size(45, 13);
-            this.labelGender.TabIndex = 1;
-            this.labelGender.Text = "Gender:";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(54, 206);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(48, 17);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Male";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(108, 206);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(59, 17);
-            this.radioButton2.TabIndex = 3;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Female";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // labelAge
-            // 
-            this.labelAge.AutoSize = true;
-            this.labelAge.Location = new System.Drawing.Point(6, 180);
-            this.labelAge.Name = "labelAge";
-            this.labelAge.Size = new System.Drawing.Size(29, 13);
-            this.labelAge.TabIndex = 4;
-            this.labelAge.Text = "Age:";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(54, 178);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(113, 20);
-            this.numericUpDown1.TabIndex = 5;
-            // 
             // fileSystemWatcher1
             // 
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 14);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "label8";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 74);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "label9";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 41);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 13);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "label10";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 115);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 13);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "label11";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(105, 314);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(41, 13);
-            this.label12.TabIndex = 14;
-            this.label12.Text = "label12";
             // 
             // Form1
             // 
@@ -513,7 +637,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfilePicture)).EndInit();
             this.task1.ResumeLayout(false);
             this.task1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOfPeople)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxNumberOfFriends)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinNumberFriends)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
 
@@ -550,17 +676,28 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label labelTextTo;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label labelAge;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label labelGender;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerTo;
+        private System.Windows.Forms.TextBox textBoxFirstName;
+        private System.Windows.Forms.TextBox textBoxLastName;
+        private System.Windows.Forms.TextBox textBoxFriendOfAFriendName;
+        private System.Windows.Forms.NumericUpDown numericUpDownMinNumberFriends;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.NumericUpDown numericUpDownMaxNumberOfFriends;
+        private System.Windows.Forms.CheckBox checkBoxFemale;
+        private System.Windows.Forms.CheckBox checkBoxMale;
+        private System.Windows.Forms.PictureBox pictureBoxOfPeople;
+        private System.Windows.Forms.ListBox listBoxMatchPeoples;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.CheckBox checkBoxEnableDate;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFrom;
     }
 }
 
